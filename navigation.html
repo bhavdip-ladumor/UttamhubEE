@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .direction-nav { 
+        display: grid; 
+        /* 2 columns on desktop to keep it short vertically */
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+        gap: 5px; 
+        padding: 10px 5%; 
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .dir-btn { 
+        background: #fff; 
+        border: 1px solid #e0e0e0; 
+        padding: 5px 15px; 
+        text-decoration: none; 
+        border-radius: 8px; 
+        display: flex; 
+        align-items: center; 
+        gap: 12px;
+        transition: all 0.2s ease;
+    }
+
+    .dir-btn i {
+        font-size: 1.2rem;
+        color: var(--accent);
+        width: 25px;
+        text-align: center;
+    }
+
+    .btn-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+
+    .btn-title {
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--primary);
+        margin-bottom: 2px;
+    }
+
+    .btn-desc {
+        font-weight: 400;
+        font-size: 0.7rem;
+        color: #7f8c8d;
+        /* This allows full content but keeps it tight */
+        display: block; 
+    }
+
+    .dir-btn:hover {
+        background: #f9f9f9;
+        border-color: var(--accent);
+        transform: translateY(-1px);
+    }
+
+    /* Mobile: Stack them but keep text small to save screen space */
+    @media (max-width: 600px) {
+        .direction-nav { 
+            grid-template-columns: 1fr; 
+            padding: 10px 15px;
+        }
+        .btn-title { font-size: 1rem; }
+        .btn-desc { font-size: 0.7rem; }
+    }
+</style>
+</head>
+<body>
+<nav class="direction-nav">
+    <a href="#home-essentials-placeholder" class="dir-btn" style="border-left: 5px solid #e84393;">
+        <i class="fas fa-heart" style="color: #e84393;"></i>
+        <div class="btn-text">
+            <span class="btn-title">1. Home & Women's Special</span>
+            <span class="btn-desc">Daily Needs & Household Essentials</span>
+        </div>
+    </a>
+
+    <a href="#art-placeholder" class="dir-btn">
+        <i class="fas fa-gift"></i>
+        <div class="btn-text">
+            <span class="btn-title">2. Gift, Art & Stationery</span>
+            <span class="btn-desc">Gifts, Artworks & College Supplies</span>
+        </div>
+    </a>
+
+    <a href="#divisions-placeholder" class="dir-btn">
+        <i class="fas fa-industry"></i>
+        <div class="btn-text">
+            <span class="btn-title">3. Manufacturing & Trading</span>
+            <span class="btn-desc">Bulk Spoons & Raw Material Supply</span>
+        </div>
+    </a>
+
+    <a href="#machine-placeholder" class="dir-btn">
+        <i class="fas fa-cogs"></i>
+        <div class="btn-text">
+            <span class="btn-title">4. Machine & Job Works</span>
+            <span class="btn-desc">Plastic Molding & 3D Printing</span>
+        </div>
+    </a>
+
+    <a href="#retail-placeholder" class="dir-btn">
+        <i class="fas fa-store"></i>
+        <div class="btn-text">
+            <span class="btn-title">5. Wholesale & Retail</span>
+            <span class="btn-desc">Daily Essentials & Walk-in Shop</span>
+        </div>
+    </a>
+</nav>
+</body>
+</html>

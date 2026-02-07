@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttam Hub | Manufacturing & Custom Gifts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2d3436; --accent: #0984e3; --light: #f9f9f9;
+            --resin-color: #00cec9; --wood-color: #e17055; --acrylic-color: #a29bfe;
+            --whatsapp: #25D366; --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+        /* This adds space above the section when you click a nav button */
+        #art-placeholder, 
+        #divisions-placeholder, 
+        #machine-placeholder, 
+        #retail-placeholder {
+             scroll-margin-top: 200px; /* Adjust this number to push the heading further down */
+}
+
+        @media (max-width: 480px) { .direction-nav { grid-template-columns: 1fr 1fr; gap: 10px; } .dir-btn { font-size: 0.75rem; } }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div id="hero-placeholder"></div>
+
+    <div id="hiring-placeholder"></div>
+
+    <div id="nav-placeholder"></div>
+
+    <div id="art-placeholder"></div>
+
+    <div id="divisions-placeholder"></div>
+
+    <div id="machine-placeholder"></div>
+
+    <div id="home-essentials-placeholder"></div>
+
+    <div id="retail-placeholder"></div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function loadSection(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => { document.getElementById(elementId).innerHTML = data; })
+                .catch(err => console.log("Missing file: " + file));
+        }
+
+        // LOAD EVERYTHING IN ORDER
+
+        // 1. Core Layout
+        loadSection('header.html', 'header-placeholder');
+        loadSection('navigation.html', 'nav-placeholder');
+        loadSection('hero-section.html', 'hero-placeholder');
+        loadSection('hiring-bar.html', 'hiring-placeholder');
+
+        // 2. The 4 Main Business Areas
+        loadSection('art-skill.html', 'art-placeholder');
+        loadSection('divisions-section.html', 'divisions-placeholder');
+        loadSection('machine-works.html', 'machine-placeholder');
+        loadSection('home-essentials.html', 'home-essentials-placeholder');
+        loadSection('retail-section.html', 'retail-placeholder');
+
+        // 3. Footer 
+        loadSection('contact-footer.html', 'footer-placeholder');
+
+        // coming soon
+
+document.addEventListener('click', function (e) {
+    const anchor = e.target.closest('a');
+    
+    // Only intercept internal links (ending in .html)
+    if (anchor && anchor.getAttribute('href') && anchor.getAttribute('href').endsWith('.html')) {
+        const url = anchor.getAttribute('href');
+        
+        // Prevent the default jump so we can check the link first
+        e.preventDefault();
+
+        // Try to "ping" the file
+        fetch(url, { method: 'HEAD' })
+            .then(response => {
+                if (response.ok) {
+                    // File exists! Go there.
+                    window.location.href = url;
+                } else {
+                    // File not found (404)! Go to coming soon.
+                    window.location.href = "coming-soon.html";
+                }
+            })
+            .catch(() => {
+                // Network error or file missing! Go to coming soon.
+                window.location.href = "coming-soon.html";
+            });
+    }
+}, true);
+
+    </script>
+</body>
+</html>

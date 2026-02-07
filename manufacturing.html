@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing | Jovial Bees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #2d3436; --accent: #0984e3; --whatsapp: #25D366; --industrial: #f1c40f; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; }
+
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none; }
+        .logo span { color: var(--accent); }
+
+        .brand-banner { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            color: white; padding: 80px 5%; text-align: center; border-bottom: 5px solid var(--industrial);
+        }
+
+        .container { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .machine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+        .machine-card { background: white; border-radius: 12px; overflow: hidden; border-left: 5px solid var(--industrial); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        
+        .machine-info { padding: 25px; }
+        .machine-info h4 { font-size: 1.3rem; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; }
+        .machine-info p { font-size: 0.95rem; color: #636e72; margin-bottom: 20px; line-height: 1.6; }
+
+        .spec-list { list-style: none; margin-bottom: 20px; background: #f9f9f9; padding: 15px; border-radius: 8px; }
+        .spec-list li { font-size: 0.85rem; margin-bottom: 5px; display: flex; justify-content: space-between; }
+        .spec-list li span { font-weight: bold; color: var(--accent); }
+
+        .buy-btn { 
+            display: block; text-align: center; background: var(--primary); color: white; 
+            text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold;
+        }
+        .buy-btn:hover { background: var(--accent); }
+
+        footer { padding: 30px; text-align: center; background: var(--primary); color: white; margin-top: 50px; }
+        
+
+        /* New styles for managing long lists */
+    .product-list-container {
+        background: #f8f9fa; 
+        padding: 15px; 
+        border-radius: 8px; 
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .scroll-box {
+        max-height: 150px; /* Limits the height */
+        overflow-y: auto;  /* Enables scrolling */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+        padding-right: 5px;
+    }
+
+    /* Professional Thin Scrollbar */
+    .scroll-box::-webkit-scrollbar { width: 5px; }
+    .scroll-box::-webkit-scrollbar-track { background: #f1f1f1; }
+    .scroll-box::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+    .tag {
+        background: white; 
+        border: 1px solid #dee2e6; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        font-size: 0.8rem;
+        color: #495057;
+        font-weight: 500;
+    }
+
+    .tag i { color: var(--accent); margin-right: 5px; font-size: 0.7rem; }
+    
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">UTTAM<span>HUB</span></a>
+        <nav><a href="index.html" style="color: white; text-decoration: none;">← Home</a></nav>
+    </header>
+
+    <div class="brand-banner">
+        <h1 style="font-size: 3rem;">Jovial Bees Manufacturing</h1>
+        <p>Advanced Plastic Production & Industrial Machinery Solutions</p>
+    </div>
+
+   <div class="container">
+    <div class="machine-grid">
+        
+        <div class="machine-card">
+            <div class="machine-info">
+                <h4>Injection Molding</h4>
+                <p>High-speed production for solid, high-strength parts.</p>
+                <div class="product-list-container">
+                    <strong style="font-size: 0.75rem; color: var(--primary); letter-spacing: 1px;">PRODUCTION CAPABILITY:</strong>
+                    <div class="scroll-box">
+                        <span class="tag"><i class="fas fa-check"></i>plastic spoon</span>
+                        <span class="tag"><i class="fas fa-check"></i>Bottle Caps</span>
+                        <span class="tag"><i class="fas fa-check"></i>Automotive Dashboards</span>
+                        <span class="tag"><i class="fas fa-check"></i>Electrical Switch Plates</span>
+                        <span class="tag"><i class="fas fa-check"></i>Syringes & Medical Tools</span>
+                        <span class="tag"><i class="fas fa-check"></i>Plastic Crates & Pallets</span>
+                        <span class="tag"><i class="fas fa-check"></i>Mobile Phone Cases</span>
+                        <span class="tag"><i class="fas fa-check"></i>Kitchenware Containers</span>
+                        <span class="tag"><i class="fas fa-check"></i>Precision Gears</span>
+                        <span class="tag"><i class="fas fa-check"></i>Housings for Electronics</span>
+                        <span class="tag"><i class="fas fa-check"></i>Furniture Brackets</span>
+                        <span class="tag"><i class="fas fa-check"></i>Toy Parts & Figures</span>
+                        <span class="tag"><i class="fas fa-check"></i>Plastic Pulleys</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20inquiring%20about%20Injection%20Molding%20Bulk%20Orders" class="buy-btn">Inquire Production</a>
+            </div>
+        </div>
+
+        <div class="machine-card"">
+            <div class="machine-info">
+                <h4>PET Blow Molding</h4>
+                <p>High-clarity, high-speed production for transparent food and beverage packaging.</p>
+                <div class="product-list-container">
+                    <strong style="font-size: 0.75rem; color: var(--primary); letter-spacing: 1px;">PRODUCTION CAPABILITY:</strong>
+                    <div class="scroll-box">
+                        <span class="tag"><i class="fas fa-check"></i>Mineral Water Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Carbonated Soda Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Edible Oil PET Jars</span>
+                        <span class="tag"><i class="fas fa-check"></i>Juice & Energy Drink Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Cosmetic Cream Jars</span>
+                        <span class="tag"><i class="fas fa-check"></i>Mouthwash Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Spice & Seasoning Jars</span>
+                        <span class="tag"><i class="fas fa-check"></i>Hand Sanitizer Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Peanut Butter Jars</span>
+                        <span class="tag"><i class="fas fa-check"></i>Pickle Containers</span>
+                        <span class="tag"><i class="fas fa-check"></i>Liquor & Spirit Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Wide-Mouth Storage Jars</span>
+                        <span class="tag"><i class="fas fa-check"></i>Clear Syrup Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Health Supplement Jars</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20inquiring%20about%20PET%20Blow%20Molding%20solutions" class="buy-btn">Inquire Production</a>
+            </div>
+        </div>
+
+        <div class="machine-card">
+            <div class="machine-info">
+                <h4>Blow Molding</h4>
+                <p>Precision manufacturing for hollow containers and packaging.</p>
+                <div class="product-list-container">
+                    <strong style="font-size: 0.75rem; color: var(--primary); letter-spacing: 1px;">PRODUCTION CAPABILITY:</strong>
+                    <div class="scroll-box">
+                        <span class="tag"><i class="fas fa-check"></i>Water & Juice Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>HDPE Milk Jars</span>
+                        <span class="tag"><i class="fas fa-check"></i>Chemical & Oil Cans</span>
+                        <span class="tag"><i class="fas fa-check"></i>Cosmetic Jars</span>
+                        <span class="tag"><i class="fas fa-check"></i>Fuel Tanks</span>
+                        <span class="tag"><i class="fas fa-check"></i>Detergent Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Liquid Soap Dispensers</span>
+                        <span class="tag"><i class="fas fa-check"></i>Agricultural Chemical Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Large Storage Drums</span>
+                        <span class="tag"><i class="fas fa-check"></i>Hollow Toys</span>
+                        <span class="tag"><i class="fas fa-check"></i>Pharmaceutical Bottles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Pesticide Containers</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20inquiring%20about%20Blow%20Molding%20Containers" class="buy-btn">Inquire Production</a>
+            </div>
+        </div>
+
+        <div class="machine-card">
+            <div class="machine-info">
+                <h4>Extruder Technology</h4>
+                <p>Continuous production for uniform profiles and long sections.</p>
+                <div class="product-list-container">
+                    <strong style="font-size: 0.75rem; color: var(--primary); letter-spacing: 1px;">PRODUCTION CAPABILITY:</strong>
+                    <div class="scroll-box">
+                        <span class="tag"><i class="fas fa-check"></i>PVC & CPVC Pipes</span>
+                        <span class="tag"><i class="fas fa-check"></i>Electrical Conduits</span>
+                        <span class="tag"><i class="fas fa-check"></i>Curtain Rods</span>
+                        <span class="tag"><i class="fas fa-check"></i>Window & Door Frames</span>
+                        <span class="tag"><i class="fas fa-check"></i>Garden Hoses</span>
+                        <span class="tag"><i class="fas fa-check"></i>Plastic Decking & Sheets</span>
+                        <span class="tag"><i class="fas fa-check"></i>Wire & Cable Insulation</span>
+                        <span class="tag"><i class="fas fa-check"></i>Weather Stripping</span>
+                        <span class="tag"><i class="fas fa-check"></i>Medical Tubing</span>
+                        <span class="tag"><i class="fas fa-check"></i>Edge Banding for Furniture</span>
+                        <span class="tag"><i class="fas fa-check"></i>T-Molding Profiles</span>
+                        <span class="tag"><i class="fas fa-check"></i>Flexible Straws</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20inquiring%20about%20Extrusion%20Profiles" class="buy-btn">Inquire Production</a>
+            </div>
+        </div>
+
+        <div class="machine-card">
+            <div class="machine-info">
+                <h4>Biobag Production</h4>
+                <p>Eco-friendly film technology for sustainable packaging.</p>
+                <div class="product-list-container">
+                    <strong style="font-size: 0.75rem; color: var(--primary); letter-spacing: 1px;">PRODUCTION CAPABILITY:</strong>
+                    <div class="scroll-box">
+                        <span class="tag"><i class="fas fa-check"></i>Compostable Grocery Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>Biodegradable Garbage Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>Hotel Laundry Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>Nursery Grow Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>Industrial Liner Films</span>
+                        <span class="tag"><i class="fas fa-check"></i>Fruit & Vegetable Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>Custom Printed Carry Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>E-commerce Mailer Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>Mulch Films for Farming</span>
+                        <span class="tag"><i class="fas fa-check"></i>D-Cut & W-Cut Bags</span>
+                        <span class="tag"><i class="fas fa-check"></i>Apron & PPE Films</span>
+                        <span class="tag"><i class="fas fa-check"></i>Stretch Wrap Rolls</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20inquiring%20about%20Bio-degradable%20Packaging" class="buy-btn">Inquire Production</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <footer>
+        <p><strong>Jovial Bees</strong> | A Division of Uttam Hub</p>
+        <p>Expertise in Industrial Plastic Solutions</p>
+    </footer>
+    <script src="cart.js"></script>
+</body>
+</html>

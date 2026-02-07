@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Hub | Uttam Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #2d3436; --accent: #0984e3; --light: #f9f9f9; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #fff; color: #333; }
+
+        /* Header Match */
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none; }
+        .logo span { color: var(--accent); }
+
+        .hub-hero { background: linear-gradient(135deg, #2d3436 0%, #000000 100%); color: white; padding: 60px 5%; text-align: center; }
+        
+        .container { padding: 50px 5%; max-width: 1200px; margin: 0 auto; }
+        .brand-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        /* Brand Cards */
+        .brand-card { 
+            background: white; border: 1px solid #eee; border-radius: 15px; padding: 30px; 
+            text-align: center; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .brand-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        .brand-name { font-size: 1.4rem; color: var(--primary); margin-bottom: 10px; font-weight: bold; }
+        .material-tag { font-size: 1rem; background: var(--light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-weight: bold; }
+        
+        .brand-card p { margin: 20px 0; color: #636e72; font-size: 0.95rem; }
+        
+        .btn-visit { 
+            display: inline-block; background: var(--primary); color: white; 
+            padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s;
+        }
+        .brand-card:hover .btn-visit { background: var(--accent); }
+
+        footer { padding: 20px; text-align: center; border-top: 1px solid #eee; margin-top: 40px; color: #636e72; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">UTTAM<span>HUB</span></a>
+        <nav><a href="index.html" style="color: white; text-decoration: none;">← Back to Main</a></nav>
+    </header>
+
+    <div class="hub-hero">
+        <h1>The Creative Hub</h1>
+        <p>Specialized Brands for Custom Art, Gifts & Prototyping</p>
+    </div>
+
+    <div class="container">
+        <div class="brand-grid">
+            
+            <div class="brand-card">
+                <div class="brand-name">Resin Cosmos</div>
+                <span class="material-tag">Resin Art & Materials</span>
+                <p>Premium customized resin gifts, flower preservation, and high-quality raw materials.</p>
+                <a href="" class="btn-visit">View Brand →</a>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-name">Wooden Beyond</div>
+                <span class="material-tag">MDF & Wood Work</span>
+                <p>Expert CNC cutting, personalized wooden decor, and creative furniture elements.</p>
+                <a href="wooden-beyond.html" class="btn-visit">View Brand →</a>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-name">Acrylic Fortune</div>
+                <span class="material-tag">Acrylic Designs</span>
+                <p>Luxury nameplates, transparent signage, and modern acrylic home accents.</p>
+                <a href="acrylic-fortune.html" class="btn-visit">View Brand →</a>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-name">Bhavdip's Workshop</div>
+                <span class="material-tag">Custom Stickers</span>
+                <p>Vinyl, transparent, and intersheet stickers for branding, art, and personal use.</p>
+                <a href="stickers.html" class="btn-visit">View Brand →</a>
+            </div>
+
+            <div class="brand-card">
+                <div class="brand-name">Bhavdip's Workshop</div>
+                <span class="material-tag">3D Printing Service</span>
+                <p>Rapid prototyping, custom 3D models, and unique printed gadgets.</p>
+                <a href="3d-printing.html" class="btn-visit">View Brand →</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Uttam Hub | Powered by Creative Divisions</p>
+    </footer>
+    <script src="cart.js"></script>
+</body>
+</html>

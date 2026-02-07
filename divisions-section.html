@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Section</title>
+    <style>
+        /* 1. Container & Centering Logic */
+        .services-container {
+            padding: 20px 5%;
+            max-width: 1200px;
+            margin: 0 auto !important; /* Forces centering */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 2. Unified Grid Definition (Only one!) */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted for better fit */
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        /* 3. Section Header Styling */
+        .section-header {
+            text-align: center;
+            padding: 30px 5% 10px 5% !important; 
+            max-width: 1000px;
+            margin: 0 auto !important;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary, #2d3436);
+            font-weight: 800;
+            margin: 0 auto !important; 
+            padding: 0 !important;
+            line-height: 1.1 !important;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: #636e72;
+            margin: 5px 0 20px 0 !important; /* Added 20px bottom margin to push the grid down */
+            padding: 0 !important;
+            display: block;
+            line-height: 1.4;
+        }
+
+        /* 4. Professional Inline Cards */
+        .card { 
+    background: white; 
+    border: 1px solid #ddd; 
+    padding: 20px; 
+    border-radius: 12px; 
+    display: flex; 
+    /* Changed to center to align logo and text perfectly in the middle */
+    align-items: center; 
+    gap: 15px; 
+    position: relative;
+    transition: 0.3s; 
+    cursor: pointer; 
+    min-height: 130px;
+    text-align: left;
+}
+
+.card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    border-color: #0984e3; 
+}
+
+.card a.main-link { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 5; 
+    text-indent: -9999px; 
+}
+
+/* Updated FontAwesome Icon style to match centering */
+.card i.main-icon { 
+    font-size: 2.2rem; 
+    color: #0984e3; 
+    min-width: 55px; 
+    display: flex;
+    justify-content: center;
+    margin: 0; /* Removed margin-top to keep it centered */
+}
+
+/* Updated Image style for your logo */
+.main-icon-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: #ffffff;   
+    border-radius: 6px;    /* Square corners */
+    border: 1px solid #ddd;
+    padding: 3px;
+    flex-shrink: 0;
+    margin: 0; /* Removed margin-top to keep it centered */
+}
+
+.card-content h3 { font-size: 1.2rem; margin-bottom: 5px; color: #2d3436; }
+.card-content p { font-size: 0.85rem; color: #636e72; line-height: 1.4; }
+
+@media (max-width: 600px) {
+    .section-title { font-size: 1.4rem; }
+    .grid { grid-template-columns: 1fr; } 
+    /* Optional: Center logo on mobile if text wraps */
+    .card { padding: 15px; } 
+}
+    </style>
+</head>
+<body>
+
+<div class="services-container">
+    <div class="section-header">
+        <h2 class="section-title">2. Manufacturing & Trading (B2B)</h2>
+        <p class="section-subtitle">Industrial Production of Jovial Bees Spoons, Bulk Resin Supply, and Wholesale Distribution.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <a href="spoons-production.html" class="main-link">Plastic Disposable Spoons</a>
+            <i class="fas fa-utensils main-icon" style="color: #f1c40f;"></i>
+            <div class="card-content">
+                <h3>Plastic Disposable Spoons</h3>
+                <p>Our signature <b>Jovial Bees Spoons</b>. Premium quality, food-grade disposable cutlery manufactured for bulk wholesale.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="trading.html" class="main-link">Bulk Trading & Supply</a>
+            <i class="fas fa-truck-loading main-icon"></i>
+            <div class="card-content">
+                <h3>Bulk Trading & Supply</h3>
+                <p>Wholesale distribution of <b>Resin Raw Materials, Industrial Chemicals</b>, and bulk disposable cutlery for businesses.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disposable Store | Jovial Bees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #1e272e; --accent: #10ac84; --bg: #f4f7f6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); }
+
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none; }
+        .logo span { color: var(--accent); }
+        
+        .hero { background: var(--accent); color: white; padding: 60px 5%; text-align: center; border-bottom: 5px solid rgba(0,0,0,0.1); }
+        
+        .container { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); }
+        .product-img { height: 180px; background: #dfe6e9; display: flex; align-items: center; justify-content: center; color: #b2bec3; font-size: 3rem; }
+        
+        .product-info { padding: 20px; text-align: center; flex-grow: 1; }
+        .product-info h4 { margin-bottom: 10px; color: var(--primary); font-size: 1.2rem; }
+        .product-info p { font-size: 0.9rem; color: #636e72; margin-bottom: 20px; line-height: 1.4; }
+
+        .btn-group { display: flex; gap: 8px; margin-top: auto; }
+        .btn { flex: 1; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.85rem; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .btn-wa { background: #25D366; color: white; }
+        .btn-cart { background: var(--primary); color: white; }
+        .btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">UTTAM<span>HUB</span></a>
+        <nav><a href="jovial-bees.html" style="color: white; text-decoration: none;"><i class="fas fa-arrow-left"></i> Back</a></nav>
+    </header>
+
+    <div class="hero">
+        <h1>Disposable Store</h1>
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: bold; opacity: 0.9;">Manufacturing & Trading</p>
+    </div>
+
+    <div class="container">
+        <div class="product-grid">
+
+            <div class="card">
+                <div class="product-img"><i class="fas fa-utensils"></i></div>
+                <div class="product-info">
+                    <h4>Plastic Spoon</h4>
+                    <p>100% vergin Plastic</p>
+                    <div class="btn-group">
+                        <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20inquiring%20about%20Plastic%spoon" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Inquiry</a>
+                        <button onclick="addToCart('Jovial Bees', 'Spoon(Bulk)')" class="btn btn-cart"><i class="fas fa-plus"></i> Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="product-img"><i class="fas fa-utensils"></i></div>
+                <div class="product-info">
+                    <h4>Paper Plates & Bowls</h4>
+                    <p>Heavy-duty, biodegradable plates manufactured for events and catering.</p>
+                    <div class="btn-group">
+                        <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20inquiring%20about%20Paper%20Plates" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Inquiry</a>
+                        <button onclick="addToCart('Jovial Bees', 'Paper Plates (Bulk)')" class="btn btn-cart"><i class="fas fa-plus"></i> Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="product-img"><i class="fas fa-box"></i></div>
+                <div class="product-info">
+                    <h4>Meal Trays & CP</h4>
+                    <p>Compartment trays and packaging for cloud kitchens and parcel services.</p>
+                    <div class="btn-group">
+                        <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20need%20details%20for%20Meal%20Trays" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Inquiry</a>
+                        <button onclick="addToCart('Jovial Bees', 'Meal Trays')" class="btn btn-cart"><i class="fas fa-plus"></i> Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="product-img"><i class="fas fa-scroll"></i></div>
+                <div class="product-info">
+                    <h4>Aluminum Foil</h4>
+                    <p>Premium grade foil rolls for food preservation and industrial use.</p>
+                    <div class="btn-group">
+                        <a href="https://wa.me/919724362981?text=Hi%20Jovial%20Bees,%20I%20am%20interested%20in%20Aluminum%20Foil%20Bulk" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Inquiry</a>
+                        <button onclick="addToCart('Jovial Bees', 'Aluminum Foil Roll')" class="btn btn-cart"><i class="fas fa-plus"></i> Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

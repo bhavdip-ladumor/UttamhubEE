@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jovial Bees | Trading & Retail Supplies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #1e272e; --accent: #10ac84; --whatsapp: #25D366; --bg: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: #2d3436; }
+
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-decoration: none; }
+        .logo span { color: var(--accent); }
+
+        .brand-banner { 
+            background: linear-gradient(rgba(30, 39, 46, 0.8), rgba(30, 39, 46, 0.8)), 
+                        url('https://images.unsplash.com/photo-1534452283844-18354db2e751?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            color: white; padding: 80px 5%; text-align: center;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        .container { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        .supply-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        .supply-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; transition: 0.3s; }
+        .supply-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        
+        .card-header { background: var(--accent); color: white; padding: 20px; text-align: center; }
+        .card-header i { font-size: 2.5rem; margin-bottom: 10px; }
+        
+        .card-body { padding: 25px; }
+        .card-body h4 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid #f1f1f1; padding-bottom: 10px; }
+        
+        .item-list { list-style: none; margin-bottom: 20px; }
+        .item-list li { margin-bottom: 8px; font-size: 0.95rem; color: #636e72; display: flex; align-items: center; }
+        .item-list li i { color: var(--accent); margin-right: 10px; font-size: 0.8rem; }
+
+        .buy-btn { 
+            display: block; text-align: center; background: var(--whatsapp); color: white; 
+            text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; transition: 0.3s;
+        }
+        .buy-btn:hover { opacity: 0.9; }
+
+        footer { padding: 30px; text-align: center; background: var(--primary); color: white; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">UTTAM<span>HUB</span></a>
+        <nav><a href="index.html" style="color: white; text-decoration: none;">← Back to Home</a></nav>
+    </header>
+
+    <div class="brand-banner">
+        <h1 style="font-size: 3rem;">Jovial Bees</h1>
+        <p style="font-size: 1.2rem; margin-top: 10px; opacity: 0.9;">Your Trusted Partner in Wholesale Trading & Retail Supplies</p>
+    </div>
+
+   <div class="container">
+    <div class="supply-grid">
+        
+        <div class="supply-card">
+            <div class="card-header">
+                <i class="fas fa-box-open"></i>
+            </div>
+            <div class="card-body">
+                <h4>Disposable Store</h4>
+                <ul class="item-list">
+                    <li><i class="fas fa-check"></i> Paper Plates & Glass</li>
+                    <li><i class="fas fa-check"></i> Plastic Containers & Trays</li>
+                    <li><i class="fas fa-check"></i> Bulk Cutlery & Napkins</li>
+                    <li><i class="fas fa-check"></i> Packaging Materials</li>
+                </ul>
+                <a href="disposable-store.html" class="buy-btn">
+                    <i class="fas fa-external-link-alt"></i> Open Disposable Store
+                </a>
+            </div>
+        </div>
+
+        <div class="supply-card">
+            <div class="card-header" style="background: #2980b9;">
+                <i class="fas fa-shopping-basket"></i>
+            </div>
+            <div class="card-body">
+                <h4>Grocery & Essentials</h4>
+                <ul class="item-list">
+                    <li><i class="fas fa-check"></i> Daily Essential Supplies</li>
+                    <li><i class="fas fa-check"></i> Bulk Grain & Pulses</li>
+                    <li><i class="fas fa-check"></i> Retail Store Distribution</li>
+                    <li><i class="fas fa-check"></i> Branded Goods Supply</li>
+                </ul>
+                <a href="grocery-trading.html" class="buy-btn" style="background: #2980b9;">
+                    <i class="fas fa-external-link-alt"></i> Open Grocery Store
+                </a>
+            </div>
+        </div>
+
+        <div class="supply-card">
+            <div class="card-header" style="background: #f39c12;">
+                <i class="fas fa-truck-loading"></i>
+            </div>
+            <div class="card-body">
+                <h4>Other Supplies</h4>
+                <ul class="item-list">
+                    <li><i class="fas fa-check"></i> General Merchandise</li>
+                    <li><i class="fas fa-check"></i> Industrial Supply Sourcing</li>
+                    <li><i class="fas fa-check"></i> Import & Export Trading</li>
+                    <li><i class="fas fa-check"></i> Custom Wholesale Orders</li>
+                </ul>
+                <a href="general-trading.html" class="buy-btn" style="background: #f39c12;">
+                    <i class="fas fa-external-link-alt"></i> Open Trading Desk
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <footer>
+        <p><strong>Jovial Bees</strong> | A Division of Uttam Hub</p>
+        <p>Contact: 9724362981</p>
+    </footer>
+    <script src="cart.js"></script>
+</body>
+</html>

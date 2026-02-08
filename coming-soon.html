@@ -69,6 +69,23 @@
     </div>
 
     <script>
+
+        function loadSection(file, elementId) {
+    fetch(file)
+        .then(response => response.text())
+        .then(data => { 
+            document.getElementById(elementId).innerHTML = data; 
+            
+            // NEW: If we just loaded the hero, attach the search event!
+            if(elementId === 'hero-placeholder') {
+                const searchInput = document.getElementById('uttamSearch');
+                if(searchInput) {
+                    searchInput.addEventListener('input', runUttamSearch);
+                }
+            }
+        })
+        .catch(err => console.log("Missing file: " + file));
+}
     function goBack() {
         // If there is a previous page in our site, go back one step
         if (document.referrer.indexOf(window.location.host) !== -1) {
@@ -78,6 +95,7 @@
             window.location.href = "index.html";
         }
     }
+
     </script>
 </body>
 </html>

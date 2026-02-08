@@ -99,54 +99,41 @@ function runUttamSearch() {
         }
     });
 }
-        document.addEventListener('click', function(e) {
+document.addEventListener('click', function(e) {
     const target = e.target.closest('a');
-    
-    // 1. If it's not a link, ignore it
     if (!target) return;
 
-    const path = target.getAttribute('href');
+    const href = target.getAttribute('href');
 
-    // 2. If the link is just "#", send to coming-soon
-    if (path === "#") {
+    // 1. Handle explicit "Coming Soon" markers
+    if (href === "#") {
         e.preventDefault();
         window.location.href = 'coming-soon.html';
         return;
     }
 
-    // 3. Allow all other valid links (like resin.html, index.html, etc.)
-    // We remove the 'fetch' check because it blocks mobile browsers
-    if (path && !path.startsWith('http') && !path.startsWith('mailto') && !path.startsWith('tel')) {
-        // Normal navigation happens here
-        console.log("Navigating to: " + path);
-    }
-});
+    // 2. Only check internal .html links (ignore tel:, mailto:, https:)
+    if (href && href.endsWith('.html') && !href.startsWith('http')) {
+        e.preventDefault(); // Stop the immediate jump
 
-  document.addEventListener('click', function(e) {
-    const target = e.target.closest('a');
-    
-    // Only check links that are meant to stay on your site (not WhatsApp/External)
-    if (target && target.href && target.href.includes(window.location.origin)) {
-        const path = target.getAttribute('href');
-        
-        // Skip check for anchors (like #about-placeholder) or the coming-soon page itself
-        if (path.startsWith('#') || path === 'coming-soon.html' || path === 'index.html') return;
-
-        // Check if the file actually exists
-        fetch(path, { method: 'HEAD' })
+        // Use a simpler check that iPhone Safari allows
+        fetch(href, { method: 'HEAD' })
             .then(response => {
-                if (!response.ok) {
-                    e.preventDefault();
-                    window.location.href = 'coming-soon.html';
+                if (response.ok) {
+                    window.location.href = href; // File exists, go there
+                } else {
+                    window.location.href = 'coming-soon.html'; // 404, go to coming soon
                 }
             })
             .catch(() => {
-                e.preventDefault();
-                window.location.href = 'coming-soon.html';
+                // This part catches the iPhone security error 
+                // We assume if we can't 'check' it, we should just try to open it
+                window.location.href = href; 
             });
     }
 });
     </script>
 </body>
 </html>
+
 

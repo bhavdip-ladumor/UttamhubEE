@@ -99,6 +99,28 @@ function runUttamSearch() {
         }
     });
 }
+        document.addEventListener('click', function(e) {
+    const target = e.target.closest('a');
+    
+    // 1. If it's not a link, ignore it
+    if (!target) return;
+
+    const path = target.getAttribute('href');
+
+    // 2. If the link is just "#", send to coming-soon
+    if (path === "#") {
+        e.preventDefault();
+        window.location.href = 'coming-soon.html';
+        return;
+    }
+
+    // 3. Allow all other valid links (like resin.html, index.html, etc.)
+    // We remove the 'fetch' check because it blocks mobile browsers
+    if (path && !path.startsWith('http') && !path.startsWith('mailto') && !path.startsWith('tel')) {
+        // Normal navigation happens here
+        console.log("Navigating to: " + path);
+    }
+});
 
   document.addEventListener('click', function(e) {
     const target = e.target.closest('a');
@@ -127,3 +149,4 @@ function runUttamSearch() {
     </script>
 </body>
 </html>
+

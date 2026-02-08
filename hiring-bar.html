@@ -5,46 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    .hiring-strip { 
-        background: #dfe6e9; 
-        padding: 6px 5%; 
-        border-bottom: 1px solid #ccc;
-        width: 100%;
-        margin-top: 5px;
-    }
-    .hiring-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        white-space: nowrap;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .hiring-content h3 { font-size: 0.85rem; margin: 0; color: #2d3436; }
-    .hiring-content p { font-size: 0.8rem; margin: 0; color: #636e72; }
-    .btn-hiring {
-        padding: 2px 10px;
-        font-size: 0.7rem;
-        background: #0984e3;
+    .hero-small { 
+        padding: 40px 20px; 
+        background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
         color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-weight: bold;
-        text-transform: uppercase;
+        text-align: center;
     }
-    @media (max-width: 450px) {
-        .hiring-content p { display: none; } /* Hides description on tiny screens to keep it 1 line */
+    .hero-inner { max-width: 1200px; margin: 0 auto; }
+    
+    .hero-small h1 { font-size: 1.8rem; margin-bottom: 8px; }
+    .hero-small h1 span { color: #0984e3; }
+    .hero-small p { font-size: 0.95rem; color: #dfe6e9; margin-bottom: 20px; }
+
+    /* Compact Search Bar */
+    .search-container { display: flex; justify-content: center; }
+    .hero-search { 
+        display: flex; 
+        background: white; 
+        padding: 4px; 
+        border-radius: 50px; 
+        width: 100%; 
+        max-width: 350px; 
+        transition: 0.3s; 
+    }
+    .hero-search input { 
+        border: none; 
+        outline: none; 
+        padding: 8px 15px; 
+        border-radius: 50px; 
+        flex-grow: 1; 
+        font-size: 0.9rem;
+    }
+    .hero-search button { 
+        background: #0984e3; 
+        border: none; 
+        color: white; 
+        padding: 8px 15px; 
+        border-radius: 50px; 
+        cursor: pointer; 
+    }
+
+    @media (max-width: 480px) {
+        .hero-small { padding: 30px 15px; }
+        .hero-small h1 { font-size: 1.5rem; }
+        .hero-small p { font-size: 0.85rem; }
     }
 </style>
 </head>
 <body>
-    <section class="hiring-strip">
-    <div class="hiring-content">
-        <h3>We Are Hiring! 🚀</h3>
-        <p>Join the Uttam Hub Team.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeQixLw1f4RuIjgusmcOWYZ4H0GjCxbtV6_PpMHyD0b1TOPxA/viewform?usp=header" target="_blank" class="btn-hiring">Apply</a>
+<section class="hero-small">
+    <div class="hero-inner">
+        <h1>ONE STOP <span>SOLUTION</span></h1>
+        
+        <p>Your Vision, Our Expertise. A <strong>One-Stop Solution</strong> providing everything from raw industrial supplies to handcrafted artistic masterpieces.</p>
+        
+    <div class="search-container">
+            <form action="search.html" method="GET" class="hero-search">
+                <input type="text" name="query" id="uttamSearch" placeholder="Search products or services..." required>
+                <button type="submit" id="searchBtn"><i class="fas fa-search"></i></button>
+    </div>
+</div>
     </div>
 </section>
+
 </body>
 </html>

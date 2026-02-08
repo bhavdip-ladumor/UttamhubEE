@@ -48,92 +48,12 @@
 
     <div id="footer-placeholder"></div>
 
+<script src="the.js">
+       </script>
 
 
-    <script>
-        function loadSection(file, elementId) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => { document.getElementById(elementId).innerHTML = data; })
-                .catch(err => console.log("Missing file: " + file));
-        }
-
-        // LOAD EVERYTHING IN ORDER
-
-        // 1. Core Layout
-        loadSection('header.html', 'header-placeholder');
-        loadSection('navigation.html', 'nav-placeholder');
-        loadSection('hero-section.html', 'hero-placeholder');
-        loadSection('hiring-bar.html', 'hiring-placeholder');
-
-        // 2. The 4 Main Business Areas
-        loadSection('art-skill.html', 'art-placeholder');
-        loadSection('divisions-section.html', 'divisions-placeholder');
-        loadSection('machine-works.html', 'machine-placeholder');
-        loadSection('home-essentials.html', 'home-essentials-placeholder');
-        loadSection('retail-section.html', 'retail-placeholder');
-
-        // 3. Footer 
-        loadSection('about-us.html', 'about-placeholder');
-        loadSection('contact-footer.html', 'footer-placeholder');
-
-        // Put this at the very bottom of index.html
-function runUttamSearch() {
-    // 1. Look for the search bar (even if it was loaded from another file)
-    var searchBox = document.getElementById('uttamSearch');
-    if(!searchBox) return; // Exit if not loaded yet
-    
-    var filter = searchBox.value.toLowerCase();
-    
-    // 2. Target the cards sitting in index.html
-    var cards = document.querySelectorAll('.card');
-
-    cards.forEach(function(card) {
-        var title = card.querySelector('h3').innerText.toLowerCase();
-        var desc = card.querySelector('p').innerText.toLowerCase();
-
-        if (title.indexOf(filter) > -1 || desc.indexOf(filter) > -1) {
-            card.style.display = ""; 
-        } else {
-            card.style.display = "none"; 
-        }
-    });
-}
-document.addEventListener('click', function(e) {
-    const target = e.target.closest('a');
-    if (!target) return;
-
-    const href = target.getAttribute('href');
-
-    // 1. Handle explicit "Coming Soon" markers
-    if (href === "#") {
-        e.preventDefault();
-        window.location.href = 'coming-soon.html';
-        return;
-    }
-
-    // 2. Only check internal .html links (ignore tel:, mailto:, https:)
-    if (href && href.endsWith('.html') && !href.startsWith('http')) {
-        e.preventDefault(); // Stop the immediate jump
-
-        // Use a simpler check that iPhone Safari allows
-        fetch(href, { method: 'HEAD' })
-            .then(response => {
-                if (response.ok) {
-                    window.location.href = href; // File exists, go there
-                } else {
-                    window.location.href = 'coming-soon.html'; // 404, go to coming soon
-                }
-            })
-            .catch(() => {
-                // This part catches the iPhone security error 
-                // We assume if we can't 'check' it, we should just try to open it
-                window.location.href = href; 
-            });
-    }
-});
-    </script>
 </body>
 </html>
+
 
 

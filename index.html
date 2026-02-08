@@ -44,7 +44,11 @@
 
     <div id="retail-placeholder"></div>
 
+    <div id="about-placeholder"></div>
+
     <div id="footer-placeholder"></div>
+
+
 
     <script>
         function loadSection(file, elementId) {
@@ -70,40 +74,33 @@
         loadSection('retail-section.html', 'retail-placeholder');
 
         // 3. Footer 
+        loadSection('about-us.html', 'about-placeholder');
         loadSection('contact-footer.html', 'footer-placeholder');
 
-        // coming soon
-
-document.addEventListener('click', function (e) {
-    const anchor = e.target.closest('a');
+        // Put this at the very bottom of index.html
+function runUttamSearch() {
+    // 1. Look for the search bar (even if it was loaded from another file)
+    var searchBox = document.getElementById('uttamSearch');
+    if(!searchBox) return; // Exit if not loaded yet
     
-    // Only intercept internal links (ending in .html)
-    if (anchor && anchor.getAttribute('href') && anchor.getAttribute('href').endsWith('.html')) {
-        const url = anchor.getAttribute('href');
-        
-        // Prevent the default jump so we can check the link first
-        e.preventDefault();
+    var filter = searchBox.value.toLowerCase();
+    
+    // 2. Target the cards sitting in index.html
+    var cards = document.querySelectorAll('.card');
 
-        // Try to "ping" the file
-        fetch(url, { method: 'HEAD' })
-            .then(response => {
-                if (response.ok) {
-                    // File exists! Go there.
-                    window.location.href = url;
-                } else {
-                    // File not found (404)! Go to coming soon.
-                    window.location.href = "coming-soon.html";
-                }
-            })
-            .catch(() => {
-                // Network error or file missing! Go to coming soon.
-                window.location.href = "coming-soon.html";
-            });
-    }
-}, true);
+    cards.forEach(function(card) {
+        var title = card.querySelector('h3').innerText.toLowerCase();
+        var desc = card.querySelector('p').innerText.toLowerCase();
+
+        if (title.indexOf(filter) > -1 || desc.indexOf(filter) > -1) {
+            card.style.display = ""; 
+        } else {
+            card.style.display = "none"; 
+        }
+    });
+}
+
 
     </script>
 </body>
-
 </html>
-

@@ -100,7 +100,30 @@ function runUttamSearch() {
     });
 }
 
+  document.addEventListener('click', function(e) {
+    const target = e.target.closest('a');
+    
+    // Only check links that are meant to stay on your site (not WhatsApp/External)
+    if (target && target.href && target.href.includes(window.location.origin)) {
+        const path = target.getAttribute('href');
+        
+        // Skip check for anchors (like #about-placeholder) or the coming-soon page itself
+        if (path.startsWith('#') || path === 'coming-soon.html' || path === 'index.html') return;
 
+        // Check if the file actually exists
+        fetch(path, { method: 'HEAD' })
+            .then(response => {
+                if (!response.ok) {
+                    e.preventDefault();
+                    window.location.href = 'coming-soon.html';
+                }
+            })
+            .catch(() => {
+                e.preventDefault();
+                window.location.href = 'coming-soon.html';
+            });
+    }
+});
     </script>
 </body>
 </html>

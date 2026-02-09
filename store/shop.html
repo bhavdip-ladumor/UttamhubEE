@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified Vendors | Uttam Hub</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <a href="../index.html" class="back-to-hub">
+    <i class="fas fa-chevron-left"></i> <span>Hub</span>
+    </a>
+    <header class="shop-hero">
+    <div class="hub-tag">
+        <i class="fas fa-check-double"></i> Uttam Hub Verified
+    </div>
+    <h1>Multi-Category <span>Stores</span></h1>
+    <p>We don't just find vendors; we certify them. Discover the city's most reliable partners for every need, hand-picked for 100% quality and surety.</p>
+
+    <form action="search.html" method="GET" class="hero-search-container">
+        <input type="text" name="query" placeholder="Search verified stores..." required>
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+</header>
+
+    <main class="content-area">
+    <span class="section-label">Trusted Business Partners</span>
+    
+    <div class="vendor-grid" id="vendor-container">
+        <p style="text-align: center; grid-column: 1/-1;">Loading Verified Vendors...</p>
+    </div>
+    </main>
+
+    <script src="vendor-db.js"></script>
+    <script src="vendor-search.js"></script>
+    <script src="../data.js"></script>
+    
+
+    <script>
+        // AUTOMATIC VENDOR FETCHER
+    async function loadVendors() {
+        try {
+            // Fetch the external cards file
+            const response = await fetch('vendors-data.html');
+            const data = await response.text();
+            
+            // Inject the cards into the container
+            document.getElementById('vendor-container').innerHTML = data;
+        } catch (error) {
+            console.error("Error loading vendors:", error);
+            document.getElementById('vendor-container').innerHTML = "<p>Coming Soon...</p>";
+        }
+    }
+
+    // Run when page opens
+    window.onload = loadVendors;
+    </script>
+
+    <script src="vendor-db.js"></script>
+    <script src="vendor-search.js"></script>
+    <script src="../cart.js"></script>
+    <script src="../the.js"></script>
+    <script src="../data.js"></script>
+    <script src="../the.js"></script>
+    
+
+    
+
+</body>
+</html>

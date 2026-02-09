@@ -13,12 +13,12 @@
         loadSection('hero-section.html', 'hero-placeholder');
         loadSection('hiring-bar.html', 'hiring-placeholder');
 
-        // 2. The 4 Main Business Areas
-        loadSection('art-skill.html', 'art-placeholder');
-        loadSection('divisions-section.html', 'divisions-placeholder');
-        loadSection('machine-works.html', 'machine-placeholder');
-        loadSection('home-essentials.html', 'home-essentials-placeholder');
-        loadSection('retail-section.html', 'retail-placeholder');
+        // 2. The 4 Main Business Areas (Now pointing to the 'divisions' folder)
+        loadSection('divisions/art-skill.html', 'art-placeholder');
+        loadSection('divisions/divisions-section.html', 'divisions-placeholder');
+        loadSection('divisions/machine-works.html', 'machine-placeholder');
+        loadSection('divisions/home-essentials.html', 'home-essentials-placeholder');
+        loadSection('divisions/retail-section.html', 'retail-placeholder');
 
         // 3. Footer 
         loadSection('about-us.html', 'about-placeholder');
@@ -101,4 +101,5 @@ document.addEventListener('click', function(e) {
             });
     }
 });
+
     
